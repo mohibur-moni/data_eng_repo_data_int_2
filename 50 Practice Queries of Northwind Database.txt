@@ -1,0 +1,38 @@
+======================50 Practice Queries of Northwind Database==========================
+
+
+1. Create a report that shows the CategoryName and Description from the categories table sorted by CategoryName
+
+SELECT
+    CategoryName,
+    Description
+FROM
+    "Categories"
+ORDER by
+    1;
+
+
+2. Create a report that shows the ContactName, CompanyName, ContactTitle and Phone number from the customers table
+sorted by Phone.
+
+SELECT
+    ContactName,
+    CompanyName,
+    ContactTitle,
+    Phone
+FROM
+    "Customers"
+ORDER by
+    4;
+
+3.Create a report that shows the capitalized FirstName and capitalized LastName renamed as FirstName and Lastname  
+respectively and HireDate from the employees table sorted from the newest to the oldest employee.
+
+SELECT
+    UPPER(FirstName) [First Name],
+    UPPER(LastName) [Last Name],
+    HireDate
+FROM
+    "Employees"
+ORDER by
+    3 DESC;
