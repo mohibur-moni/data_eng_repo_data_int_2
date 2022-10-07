@@ -36,3 +36,19 @@ FROM
     "Employees"
 ORDER by
     3 DESC;
+
+
+4.Create a report that shows the top 10 OrderID, OrderDate, ShippedDate, CustomerID, Freight from the orders table sorted by Freight in descending order.
+
+SELECT
+    OrderID,
+    OrderDate,
+    ShippedDate,
+    CustomerID,
+    Freight
+FROM
+    "Orders"
+ORDER by
+    5 DESC
+LIMIT
+    10;
