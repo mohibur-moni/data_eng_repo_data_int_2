@@ -25,3 +25,9 @@ end as order_report
 FROM
 order_sum os join total_spe ts 
 using (orderid)
+
+SELECT o.customerid, os.orderid, os.total_qua, os.total_spe, os.order_report 
+from 
+order_summary as os
+join orders o 
+using (orderid)
