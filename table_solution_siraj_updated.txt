@@ -42,7 +42,7 @@ SELECT DISTINCT Shipcountry,
   where "2017" is not NULL 
   ORDER by shipcountry
 
-## create a table view that include only sales of 2017 and their client countries
+## create a table view that include only sales of 2018 and their client countries
   CREATE view sales_2018 as
 SELECT DISTINCT (Shipcountry),
        (CASE WHEN year = '2018' THEN total_revenues END) AS "2018"
