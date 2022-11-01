@@ -1,5 +1,5 @@
-
-Question : Create a comparative table that shows the progression of annual revenues in each country and a 
+Question : Create a comparative table that shows the progression of annual revenues in each country 
+and a table that shows the total revenues of each country in each year and their evaluation as "low" "medium" and "high"
 
 ## create a table view named "revenues" that shows the total revenues of each country in each year without evaluation
 
