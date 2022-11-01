@@ -1,0 +1,37 @@
+SELECT * FROM new_table
+## create a table view that include only sales of 2016 and their client countries
+
+CREATE view sales_2016 as
+SELECT DISTINCT Shipcountry,
+       (CASE WHEN year = '2016' THEN total_revenues END) AS "2016"
+  FROM new_table
+  where "2016" is not NULL
+  ORDER by shipcountry
+
+## create a table view that include only sales of 2017 and their client countries  
+  CREATE view sales_2017 as
+SELECT DISTINCT Shipcountry,
+       (CASE WHEN year = '2017' THEN total_revenues END) AS "2017"
+  FROM new_table
+  where "2017" is not NULL 
+  ORDER by shipcountry
+
+## create a table view that include only sales of 2017 and their client countries
+  CREATE view sales_2018 as
+SELECT DISTINCT (Shipcountry),
+       (CASE WHEN year = '2018' THEN total_revenues END) AS "2018"
+  FROM new_table
+  where "2018" is not NULL
+  ORDER by shipcountry
+
+## show a table that visualize the evolution of anuual total sales in each country
+    
+ SELECT DISTINCT new_table.shipcountry,
+ sales_2016."2016",
+ sales_2017."2017",
+ sales_2018."2018"
+ from new_table
+ Right JOIN sales_2017 on new_table.shipcountry = sales_2017.shipcountry
+ LEFT  JOIN sales_2016   on sales_2016.shipcountry = sales_2017.shipcountry
+ RIGHT  JOIN sales_2018 on sales_2018.shipcountry = sales_2017.shipcountry
+ ORDER by 1
