@@ -1,6 +1,0 @@
-select FirstName , LastName , 
-datetime('now') - BirthDate as age,
-case when datetime('now') - BirthDate > 50 THEN 'he can retire'
-else 'he cannot retire'
-end as retirement_status
-FROM Employees e ;

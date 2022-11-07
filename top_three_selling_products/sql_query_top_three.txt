@@ -1,0 +1,14 @@
+--calculating top three selling products--
+
+-- Based on quantity--
+SELECT ProductName as product_name , UnitsOnOrder as total_order, UnitPrice * UnitsOnOrder as price
+from Products p
+order by 2 desc, 1 
+limit 3;
+
+-- based on price per-unit
+SELECT ProductName as product_name , UnitsOnOrder as total_order , UnitPrice * UnitsOnOrder as price
+from Products p
+order by 3 desc, 1 
+limit 3;
+

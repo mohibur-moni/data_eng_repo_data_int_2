@@ -1,8 +1,0 @@
-Write a query to find out the highest freight and show the month name only from orderdate column.
-
-select case strftime('%m', orderdate) when '01' then 'January' when '02' then 'Febuary' when '03' then 'March' when '04' then 'April' when '05' then 'May' when '06' then 'June' when '07' then 'July' when '08' then 'August' when '09' then 'September' when '10' then 'October' when '11' then 'November' when '12' then 'December' else '' end
-as month_name, max(freight) height_freight
-from orders
-group by 1
-order by 2 DESC
-limit 1;
