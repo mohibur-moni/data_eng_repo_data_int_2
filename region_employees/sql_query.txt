@@ -1,0 +1,16 @@
+/* 1 - generate a report for number of employees in 
+ * each territory and where is the territory region */
+
+SELECT COUNT(EmployeeID) as employee_count, TerritoryDescription
+FROM Territories
+INNER JOIN EmployeeTerritories USING(TerritoryID)
+INNER JOIN Employees
+USING (EmployeeID)
+GROUP BY 2;
+
+SELECT Territories.TerritoryDescription, COUNT() as number_of_employees
+FROM Territories
+JOIN EmployeeTerritories on EmployeeTerritories.TerritoryID = Territories.TerritoryID 
+JOIN Employees on Employees.EmployeeID = EmployeeTerritories.EmployeeID
+GROUP BY 1;
+
