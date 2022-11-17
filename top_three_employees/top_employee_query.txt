@@ -1,0 +1,12 @@
+/*generate a report for employee's performance acording to sales amount and order 
+them decreasely in order to find the top three*/
+
+select e.Firstname || ' ' || e."LastName" as name, round(sum(od.UnitPrice * od.quantity),2 ) as sales_amount
+from 'order details' as od
+join Orders o 
+on od.orderid=o."OrderID"
+join Employees e 
+on e.Employeeid = o."EmployeeID"
+group by o."EmployeeID"
+order by 2 DESC
+limit 3;
